@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>第257回鹿児島県スイミングクラブ水泳競技大会（エリート大会） 大会結果</title>
+<style>
+:root{
+  --bg:#07131d;
+  --surface:#102233;
+  --surface2:#173247;
+  --surface3:#21435a;
+  --surface4:#0c1a27;
+  --accent:#6ee7d8;
+  --accent2:#1495b8;
+  --accent3:#9fe8ff;
+  --female:#d65a95;
+  --female-bg:#59243d;
+  --male:#2a86d8;
+  --male-bg:#123b63;
+  --record:#d6a237;
+  --record-bg:#553a0f;
+  --success:#83d48d;
+  --success-bg:#173f23;
+  --text:#eff9ff;
+  --text2:#a8c0cf;
+  --text3:#d5edf8;
+  --border:#2b5066;
+  --border-soft:rgba(255,255,255,.08);
+  --shadow:0 12px 30px rgba(0,0,0,.28);
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg)}
+body{
+  font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP","Meiryo",sans-serif;
+  background:
+    radial-gradient(circle at top,rgba(110,231,216,.14),transparent 28%),
+    linear-gradient(180deg,#08131d 0%,#0b1b29 100%);
+  color:var(--text);
+  min-height:100vh;
+  max-width:500px;
+  margin:0 auto;
+  padding-bottom:48px;
+}
+a{color:inherit}
+button,input,select{font:inherit}
+.header{
+  position:sticky;
+  top:0;
+  z-index:30;
+  padding:14px 14px 12px;
+  border-bottom:1px solid var(--border);
+  background:linear-gradient(180deg,rgba(11,27,41,.98),rgba(12,26,39,.94));
+  backdrop-filter:blur(16px);
+  box-shadow:0 3px 20px rgba(0,0,0,.35);
+}
+.hero{
+  padding:14px;
+  border:1px solid rgba(110,231,216,.18);
+  border-radius:18px;
+  background:
+    linear-gradient(135deg,rgba(26,80,109,.95),rgba(16,34,51,.95)),
+    radial-gradient(circle at right top,rgba(159,232,255,.18),transparent 35%);
+  box-shadow:var(--shadow);
+}
+.hero-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+.hero-mark{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  box-shadow:0 8px 18px rgba(20,149,184,.3);
+  flex-shrink:0;
+}
+.hero-copy{min-width:0;flex:1}
+.hero-title{
+  font-size:15px;
+  line-height:1.45;
+  font-weight:800;
+  color:#fff;
+}
+.hero-sub{
+  margin-top:5px;
+  font-size:11px;
+  line-height:1.65;
+  color:var(--accent3);
+}
+.hero-badge{
+  flex-shrink:0;
+  padding:7px 11px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#f7c968,#d8991b);
+  color:#442d04;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+.hero-note{
+  margin-top:12px;
+  font-size:11px;
+  line-height:1.75;
+  color:#ecf7ff;
+  opacity:.9;
+}
+.hero-stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:7px;
+  margin-top:12px;
+}
+.stat{
+  padding:9px 7px;
+  border-radius:12px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+  text-align:center;
+}
+.stat-num{
+  font-size:16px;
+  font-weight:900;
+  color:#fff;
+  line-height:1.2;
+}
+.stat-label{
+  margin-top:2px;
+  font-size:10px;
+  color:var(--text2);
+}
+.tabs{
+  display:flex;
+  margin-top:12px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  overflow:hidden;
+}
+.tab{
+  flex:1;
+  padding:10px 0 9px;
+  background:var(--surface2);
+  color:var(--text2);
+  text-align:center;
+  font-size:11px;
+  font-weight:800;
+  line-height:1.35;
+  border:none;
+}
+.tab.active{
+  background:linear-gradient(135deg,var(--accent2),#0c7088);
+  color:#fff;
+}
+.panel{
+  display:none;
+  padding:14px;
+}
+.panel.active{display:block}
+.source-row{
+  display:flex;
+  gap:8px;
+  margin-bottom:12px;
+}
+.source-link{
+  flex:1;
+  text-decoration:none;
+  padding:11px 12px;
+  border-radius:14px;
+  background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
+  border:1px solid var(--border-soft);
+  box-shadow:var(--shadow);
+}
+.source-title{
+  font-size:12px;
+  font-weight:800;
+  color:#fff;
+}
+.source-sub{
+  margin-top:4px;
+  font-size:10px;
+  line-height:1.55;
+  color:var(--text2);
+}
+.card{
+  background:linear-gradient(180deg,rgba(19,41,58,.94),rgba(16,34,51,.96));
+  border:1px solid var(--border);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+}
+.lead-card{
+  padding:14px;
+  margin-bottom:12px;
+}
+.kicker{
+  display:inline-block;
+  margin-bottom:8px;
+  padding:4px 9px;
+  border-radius:999px;
+  background:rgba(110,231,216,.18);
+  color:#dffdf8;
+  font-size:11px;
+  font-weight:800;
+}
+.lead-title{
+  font-size:15px;
+  font-weight:800;
+  line-height:1.45;
+}
+.lead-text{
+  margin-top:6px;
+  font-size:12px;
+  line-height:1.8;
+  color:var(--text2);
+}
+.lead-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:10px;
+}
+.pill{
+  display:inline-block;
+  padding:5px 9px;
+  border-radius:999px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+  font-size:11px;
+  color:var(--text3);
+}
+.controls{
+  padding:12px;
+  margin-bottom:12px;
+}
+.search{
+  width:100%;
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:var(--surface4);
+  color:#fff;
+  outline:none;
+}
+.search::placeholder{color:#7590a2}
+.search-help{
+  margin-top:8px;
+  font-size:11px;
+  line-height:1.7;
+  color:var(--accent3);
+}
+.search-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:8px;
+}
+.search-link{
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(110,231,216,.22);
+  background:rgba(110,231,216,.08);
+  color:#dffdf8;
+  font-size:11px;
+  font-weight:800;
+  cursor:pointer;
+}
+.chip-row{
+  display:flex;
+  gap:7px;
+  margin-top:10px;
+  flex-wrap:wrap;
+}
+.filter-label{
+  margin-top:10px;
+  font-size:11px;
+  font-weight:900;
+  color:var(--accent3);
+  letter-spacing:.04em;
+}
+.chip{
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:var(--surface2);
+  color:var(--text2);
+  font-size:12px;
+  font-weight:800;
+  cursor:pointer;
+}
+.chip.active{background:var(--accent2);border-color:var(--accent);color:#fff}
+.chip.female.active{background:var(--female);border-color:var(--female)}
+.chip.male.active{background:var(--male);border-color:var(--male)}
+.chip.record.active{background:var(--record);border-color:var(--record)}
+.status{
+  margin-bottom:12px;
+  padding:10px 12px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:var(--surface2);
+  color:var(--text2);
+  font-size:12px;
+  line-height:1.7;
+}
+.status strong{color:#fff}
+.swimmer-list,
+.record-list,
+.event-detail-list{
+  display:grid;
+  gap:10px;
+}
+.swimmer-card{
+  border-radius:18px;
+  background:linear-gradient(180deg,rgba(19,41,58,.94),rgba(16,34,51,.96));
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.swimmer-summary{
+  list-style:none;
+  padding:13px 14px;
+  cursor:pointer;
+}
+.swimmer-summary::-webkit-details-marker{display:none}
+.swimmer-name-row{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+}
+.swimmer-name{
+  font-size:15px;
+  font-weight:900;
+  line-height:1.35;
+}
+.name-kana{
+  margin-top:2px;
+  font-size:10px;
+  line-height:1.45;
+  color:var(--accent3);
+  letter-spacing:.04em;
+}
+.swimmer-team{
+  margin-top:4px;
+  font-size:12px;
+  color:var(--text2);
+}
+.badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  margin-top:9px;
+}
+.badge{
+  padding:4px 8px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:800;
+}
+.badge-female{background:var(--female-bg);color:#ffc0db}
+.badge-male{background:var(--male-bg);color:#aad4ff}
+.badge-age{background:#17394d;color:#afe6ff}
+.badge-grade{background:#183f24;color:#9ee0a4}
+.badge-count{background:#2a3040;color:#dfeeff}
+.swimmer-body{
+  padding:0 14px 14px;
+}
+.result-item{
+  padding:10px 11px;
+  border-radius:14px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.06);
+}
+.result-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+}
+.result-title{
+  font-size:13px;
+  font-weight:800;
+  line-height:1.5;
+}
+.result-time{
+  font-size:16px;
+  font-weight:900;
+  color:var(--accent);
+  white-space:nowrap;
+}
+.result-meta{
+  margin-top:6px;
+  font-size:11px;
+  line-height:1.75;
+  color:var(--text2);
+}
+.event-selector{
+  display:grid;
+  gap:12px;
+  margin-bottom:12px;
+}
+.event-group{
+  padding:12px;
+  border-radius:18px;
+  background:linear-gradient(180deg,rgba(19,41,58,.72),rgba(12,26,39,.92));
+  border:1px solid rgba(255,255,255,.08);
+}
+.event-group-title{
+  font-size:13px;
+  font-weight:900;
+  color:#fff;
+}
+.event-group-sub{
+  margin-top:4px;
+  font-size:11px;
+  line-height:1.65;
+  color:var(--text2);
+}
+.event-subgroup{
+  margin-top:10px;
+}
+.event-subgroup-label{
+  margin-bottom:7px;
+  font-size:11px;
+  font-weight:900;
+  color:var(--accent3);
+}
+.event-subgroup-list{
+  display:grid;
+  gap:8px;
+}
+.selector-note{
+  margin-bottom:10px;
+  padding:10px 12px;
+  border-radius:14px;
+  background:rgba(110,231,216,.08);
+  border:1px solid rgba(110,231,216,.16);
+  color:var(--accent3);
+  font-size:11px;
+  line-height:1.75;
+}
+.event-button{
+  width:100%;
+  text-align:left;
+  padding:12px 13px;
+  border-radius:16px;
+  border:1px solid var(--border);
+  background:linear-gradient(180deg,rgba(23,50,71,.96),rgba(16,34,51,.98));
+  color:inherit;
+}
+.event-button.active{
+  border-color:var(--accent);
+  background:linear-gradient(180deg,rgba(17,149,184,.2),rgba(16,34,51,.98));
+}
+.event-no{
+  font-size:11px;
+  font-weight:800;
+  color:var(--accent3);
+}
+.event-name{
+  margin-top:4px;
+  font-size:14px;
+  font-weight:900;
+  line-height:1.45;
+}
+.event-sub{
+  margin-top:5px;
+  font-size:11px;
+  line-height:1.65;
+  color:var(--text2);
+}
+.section-card{
+  padding:14px;
+  margin-bottom:12px;
+}
+.row-main{
+  min-width:0;
+}
+.row-name{
+  font-size:13px;
+  font-weight:900;
+  line-height:1.4;
+}
+.row-team{
+  margin-top:3px;
+  font-size:11px;
+  color:var(--text2);
+  line-height:1.55;
+}
+.row-right{
+  text-align:right;
+}
+.row-rank{
+  font-size:12px;
+  font-weight:900;
+  color:#fff;
+}
+.row-time{
+  margin-top:3px;
+  font-size:14px;
+  font-weight:900;
+  color:var(--accent);
+}
+.row-status{
+  margin-top:3px;
+  font-size:11px;
+  color:#ffd9a0;
+}
+.members{
+  margin-top:5px;
+  font-size:11px;
+  line-height:1.7;
+  color:var(--text3);
+}
+.empty-view{
+  padding:16px 14px;
+  border-radius:18px;
+  border:1px dashed rgba(255,255,255,.12);
+  color:var(--text2);
+  font-size:12px;
+  line-height:1.8;
+}
+.record-card{
+  padding:13px 14px;
+  border-radius:18px;
+  background:linear-gradient(180deg,rgba(82,57,15,.32),rgba(16,34,51,.98));
+  border:1px solid rgba(214,162,55,.28);
+  box-shadow:var(--shadow);
+}
+.record-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:10px;
+}
+.record-title{
+  font-size:14px;
+  font-weight:900;
+  line-height:1.5;
+}
+.record-time{
+  font-size:19px;
+  font-weight:900;
+  color:#ffd48d;
+  white-space:nowrap;
+}
+.record-sub{
+  margin-top:7px;
+  font-size:12px;
+  line-height:1.8;
+  color:var(--text2);
+}
+.mini-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  margin-top:8px;
+}
+.mini-tag{
+  padding:4px 8px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:800;
+}
+.record-mark{background:var(--record-bg);color:#ffda9a}
+.female-mark{background:var(--female-bg);color:#ffc0db}
+.male-mark{background:var(--male-bg);color:#abd4ff}
+.division-mark{background:#18394d;color:#afe6ff}
+.pdf-note{
+  margin-top:8px;
+  font-size:10px;
+  line-height:1.7;
+  color:#7ea1b4;
+}
+.jump-row{
+  display:flex;
+  gap:8px;
+  margin-top:10px;
+  flex-wrap:wrap;
+}
+.jump-button{
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(110,231,216,.22);
+  background:rgba(110,231,216,.08);
+  color:#dffdf8;
+  font-size:11px;
+  font-weight:800;
+  cursor:pointer;
+}
+.division-rank-wrap{
+  display:grid;
+  gap:10px;
+  margin-bottom:12px;
+}
+.division-rank-card{
+  padding:12px;
+  border-radius:16px;
+  background:linear-gradient(180deg,rgba(22,62,48,.34),rgba(16,34,51,.96));
+  border:1px solid rgba(131,212,141,.22);
+}
+.division-rank-title{
+  font-size:13px;
+  font-weight:900;
+  color:#fff;
+}
+.division-rank-sub{
+  margin-top:4px;
+  font-size:11px;
+  line-height:1.7;
+  color:var(--text2);
+}
+.division-rank-list{
+  display:grid;
+  gap:7px;
+  margin-top:10px;
+}
+.division-rank-row{
+  display:grid;
+  grid-template-columns:42px 1fr auto;
+  gap:10px;
+  align-items:start;
+  padding:9px 10px;
+  border-radius:14px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.06);
+}
+.division-place{
+  border-radius:12px;
+  padding:7px 0;
+  background:rgba(131,212,141,.16);
+  text-align:center;
+}
+.division-place-label{
+  font-size:10px;
+  color:#b7e7be;
+}
+.division-place-value{
+  font-size:15px;
+  font-weight:900;
+  color:#fff;
+}
+.division-rank-meta{
+  margin-top:3px;
+  font-size:11px;
+  line-height:1.65;
+  color:var(--text2);
+}
+@media (max-width:380px){
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .source-row{flex-direction:column}
+  .division-rank-row{grid-template-columns:40px 1fr}
+  .row-right{
+    grid-column:2;
+    text-align:left;
+    display:flex;
+    gap:10px;
+    align-items:baseline;
+    flex-wrap:wrap;
+  }
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="hero">
+    <div class="hero-top">
+      <div class="hero-mark">🏊</div>
+      <div class="hero-copy">
+        <div class="hero-title">第257回鹿児島県スイミングクラブ水泳競技大会（エリート大会）</div>
+        <div class="hero-sub">2026年6月14日 / 全結果を区分順位ベースでスマホ確認できる結果アプリ</div>
+      </div>
+      <div class="hero-badge">大会結果</div>
+    </div>
+    <div class="hero-note">上位10だけを切り出さず、全結果PDFを基準に個人・リレー・大会新記録を分けて見やすく整理しています。</div>
+    <div class="hero-stats" id="heroStats"></div>
+  </div>
+  <div class="tabs">
+    <button class="tab active" data-tab="1">🔍<br>選手・チーム</button>
+    <button class="tab" data-tab="2">📋<br>種目結果</button>
+    <button class="tab" data-tab="3">🔄<br>リレー結果</button>
+    <button class="tab" data-tab="4">🏅<br>大会新記録</button>
+  </div>
+</div>
+
+<section class="panel active" id="panel1">
+  <div class="source-row">
+    <a class="source-link" href="https://www.kagoshima-swim.com/new/wp-content/uploads/2026/06/cb650d2c2cf3ce36559bf3d1336694b2.pdf" target="_blank" rel="noopener">
+      <div class="source-title">公式の全結果PDFを開く</div>
+      <div class="source-sub">プログラム順の元資料です。アプリの結果はこのPDFを基準にしています。</div>
+    </a>
+  </div>
+  <div class="card lead-card">
+    <div class="kicker">SWIMMER SEARCH</div>
+    <div class="lead-title">名前・所属・ふりがなから結果をそのまま追えます</div>
+    <div class="lead-text">選手カードを開くと、個人結果とリレー結果を No. 順でまとめて確認できます。女子を先、男子を後ろに置いて、学年上位の見やすさも崩しません。</div>
+    <div class="lead-tags">
+      <span class="pill">女子 → 男子</span>
+      <span class="pill">ふりがな検索対応</span>
+      <span class="pill">個人・リレーを同時表示</span>
+    </div>
+  </div>
+  <div class="card controls">
+    <input class="search" id="swimmerSearch" type="search" placeholder="氏名 / 所属 / ふりがな で検索">
+    <div class="search-help">ひらがな検索OK。例: ふたつき / ふじの / こうなん</div>
+    <div class="search-links" id="swimmerSearchLinks">
+      <button class="search-link" data-query="ふたつき">ふたつき</button>
+      <button class="search-link" data-query="ふじの">ふじの</button>
+      <button class="search-link" data-query="こうなん">こうなん</button>
+    </div>
+    <div class="filter-label">性別</div>
+    <div class="chip-row" id="swimmerSexChips"></div>
+    <div class="filter-label">区分</div>
+    <div class="chip-row" id="swimmerAgeChips"></div>
+  </div>
+  <div class="status" id="swimmerStatus"></div>
+  <div class="swimmer-list" id="swimmerList"></div>
+</section>
+
+<section class="panel" id="panel2">
+  <div class="source-row">
+    <a class="source-link" href="https://www.kagoshima-swim.com/new/wp-content/uploads/2026/06/cb650d2c2cf3ce36559bf3d1336694b2.pdf" target="_blank" rel="noopener">
+      <div class="source-title">種目結果の元PDFを開く</div>
+      <div class="source-sub">アプリでは No. 順で選び、選んだ種目の区分順位をそのまま確認できます。</div>
+    </a>
+  </div>
+  <div class="card lead-card">
+    <div class="kicker">EVENT RESULTS</div>
+    <div class="lead-title">種目ごとに全結果を見失わない形へ整理</div>
+    <div class="lead-text">ここは個人種目専用です。年齢区分が違う同種目は分けたまま、その区分の通し順位だけを見やすく出します。</div>
+  </div>
+  <div class="card controls">
+    <div class="chip-row" id="individualSexChips"></div>
+    <div class="chip-row" id="individualAgeChips"></div>
+  </div>
+  <div class="status" id="individualStatus"></div>
+  <div id="individualEventDetail"></div>
+  <div class="selector-note">下の種目をタップすると、結果はこのすぐ上に切り替わります。いちばん下まで見に行かなくて大丈夫です。</div>
+  <div class="event-selector" id="individualEventSelector"></div>
+</section>
+
+<section class="panel" id="panel3">
+  <div class="source-row">
+    <a class="source-link" href="https://www.kagoshima-swim.com/new/wp-content/uploads/2026/06/cb650d2c2cf3ce36559bf3d1336694b2.pdf" target="_blank" rel="noopener">
+      <div class="source-title">リレー結果の元PDFを開く</div>
+      <div class="source-sub">第一泳者ラップ、メンバー、順位、最終タイムまでリレーだけ独立して見られます。</div>
+    </a>
+  </div>
+  <div class="card lead-card">
+    <div class="kicker">RELAY RESULTS</div>
+    <div class="lead-title">リレーは個人と混ぜずに、区分ごとに確認</div>
+    <div class="lead-text">4×50m と 4×100m を分けつつ、10歳以下から15〜18歳までの区分を崩さず表示します。</div>
+  </div>
+  <div class="card controls">
+    <div class="chip-row" id="relaySexChips"></div>
+    <div class="chip-row" id="relayAgeChips"></div>
+  </div>
+  <div class="status" id="relayStatus"></div>
+  <div id="relayEventDetail"></div>
+  <div class="selector-note">下のリレー種目をタップすると、結果はこのすぐ上に切り替わります。順位もメンバーもすぐ確認できます。</div>
+  <div class="event-selector" id="relayEventSelector"></div>
+</section>
+
+<section class="panel" id="panel4">
+  <div class="source-row">
+    <a class="source-link" href="https://www.kagoshima-swim.com/new/wp-content/uploads/2026/06/cb650d2c2cf3ce36559bf3d1336694b2.pdf" target="_blank" rel="noopener">
+      <div class="source-title">新記録一覧の元PDFを開く</div>
+      <div class="source-sub">1ページ目の新記録一覧を、このタブだけ独立して強調しています。</div>
+    </a>
+  </div>
+  <div class="card lead-card">
+    <div class="kicker">MEET RECORDS</div>
+    <div class="lead-title">大会新記録だけは、きちんと讃える</div>
+    <div class="lead-text">10位だけを切り出す見せ方はやめて、意味のある特別情報として大会新記録だけを別タブにまとめました。</div>
+  </div>
+  <div class="card controls">
+    <div class="chip-row" id="recordSexChips"></div>
+    <div class="chip-row" id="recordTypeChips"></div>
+  </div>
+  <div class="status" id="recordStatus"></div>
+  <div class="record-list" id="recordList"></div>
+</section>
+
+<script src="./elite257-results-data.js"></script>
+<script>
+const DATA = window.ELITE257_RESULTS_DATA || null;
+
+const state = {
+  tab: 1,
+  swimmerQuery: "",
+  swimmerSex: "all",
+  swimmerAge: "all",
+  individualSex: "all",
+  individualAge: "all",
+  individualEventNo: null,
+  relaySex: "all",
+  relayAge: "all",
+  relayEventNo: null,
+  recordSex: "all",
+  recordType: "all"
+};
+
+const SWIMMER_AGE_OPTIONS = ["all", "10歳以下", "11〜12歳", "13〜14歳", "15〜18歳"];
+const EVENT_AGE_OPTIONS = ["all", "全区分", "12歳以下", "13歳以上", "10歳以下", "11〜12歳", "13〜14歳", "15〜18歳"];
+const AGE_RENDER_ORDER = ["全区分", "12歳以下", "13歳以上", "10歳以下", "11〜12歳", "13〜14歳", "15〜18歳"];
+const SEX_RENDER_ORDER = ["女子", "男子"];
+const AGE_LABELS = {
+  all: "すべて",
+  "全区分": "全区分",
+  "12歳以下": "12歳以下",
+  "13歳以上": "13歳以上",
+  "10歳以下": "10歳以下",
+  "11〜12歳": "11〜12歳",
+  "13〜14歳": "13〜14歳",
+  "15〜18歳": "15〜18歳"
+};
+
+function ageTargets(ageClass){
+  if(ageClass === "全区分") return ["10歳以下", "11〜12歳", "13〜14歳", "15〜18歳"];
+  if(ageClass === "12歳以下") return ["10歳以下", "11〜12歳"];
+  if(ageClass === "13歳以上") return ["13〜14歳", "15〜18歳"];
+  return [ageClass];
+}
+
+function eventAgeMatches(eventAgeClass, filterAgeClass){
+  if(filterAgeClass === "all") return true;
+  if(filterAgeClass === "全区分") return eventAgeClass === "全区分";
+  if(eventAgeClass === filterAgeClass) return true;
+  const eventTargets = ageTargets(eventAgeClass);
+  const filterTargets = ageTargets(filterAgeClass);
+  return eventTargets.some(ageClass => filterTargets.includes(ageClass));
+}
+
+function swimmerAgeMatches(swimmerAgeGroup, filterAgeClass){
+  if(filterAgeClass === "all") return true;
+  return ageTargets(filterAgeClass).includes(swimmerAgeGroup);
+}
+
+function escapeHtml(value){
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function normalizeText(value){
+  return String(value || "")
+    .normalize("NFKC")
+    .replace(/[ぁ-ゖ]/g, char => String.fromCharCode(char.charCodeAt(0) + 0x60))
+    .replace(/[ー－―]/g, "-")
+    .replace(/\s+/g, "")
+    .toUpperCase();
+}
+
+function swimmerSearchIndex(swimmer){
+  if(swimmer._searchIndexNormalized) return swimmer._searchIndexNormalized;
+  swimmer._searchIndexNormalized = normalizeText([
+    swimmer.name,
+    swimmer.kana,
+    swimmer.team,
+    swimmer.teamKana,
+    swimmer.sex,
+    swimmer.grade,
+    swimmer.ageGroup,
+    swimmer.searchIndex || ""
+  ].join(" "));
+  return swimmer._searchIndexNormalized;
+}
+
+function getSwimmerMeta(name, team, sex){
+  return DATA.swimmers.find(swimmer => swimmer.name === name && swimmer.team === team && swimmer.sex === sex) || null;
+}
+
+function setTabs(){
+  document.querySelectorAll(".tab").forEach(button => {
+    button.classList.toggle("active", Number(button.dataset.tab) === state.tab);
+  });
+  document.querySelectorAll(".panel").forEach((panel, index) => {
+    panel.classList.toggle("active", index + 1 === state.tab);
+  });
+}
+
+function renderHeroStats(){
+  const summary = DATA.summary;
+  document.getElementById("heroStats").innerHTML = [
+    { num: summary.eventCount, label: "全種目" },
+    { num: summary.individualResultCount, label: "個人結果" },
+    { num: summary.relayResultCount, label: "リレー" },
+    { num: summary.recordCount, label: "新記録" }
+  ].map(item => `
+    <div class="stat">
+      <div class="stat-num">${escapeHtml(item.num)}</div>
+      <div class="stat-label">${escapeHtml(item.label)}</div>
+    </div>`).join("");
+}
+
+function chipMarkup(items, current, key, extraClass = ""){
+  return items.map(item => {
+    const active = item.value === current ? " active" : "";
+    const cls = ["chip", item.className || "", extraClass].filter(Boolean).join(" ");
+    return `<button class="${cls}${active}" data-key="${key}" data-value="${escapeHtml(item.value)}">${escapeHtml(item.label)}</button>`;
+  }).join("");
+}
+
+function attachChipHandlers(rootId, setter){
+  document.getElementById(rootId).addEventListener("click", event => {
+    const button = event.target.closest(".chip");
+    if(!button) return;
+    setter(button.dataset.value);
+  });
+}
+
+function groupMetaHtml(result){
+  const parts = [
+    `No.${result.no}`,
+    result.ageClass,
+    result.status || "",
+    result.mark || ""
+  ].filter(Boolean);
+  return parts.join(" / ");
+}
+
+function renderSwimmerFilters(){
+  document.getElementById("swimmerSexChips").innerHTML = chipMarkup([
+    { value: "all", label: "全員" },
+    { value: "female", label: "女子", className: "female" },
+    { value: "male", label: "男子", className: "male" }
+  ], state.swimmerSex, "swimmerSex");
+
+  document.getElementById("swimmerAgeChips").innerHTML = chipMarkup(SWIMMER_AGE_OPTIONS.map(value => ({
+    value,
+    label: AGE_LABELS[value]
+  })), state.swimmerAge, "swimmerAge");
+}
+
+function filterSwimmers(){
+  const query = normalizeText(state.swimmerQuery);
+  return DATA.swimmers.filter(swimmer => {
+    if(state.swimmerSex === "female" && swimmer.sex !== "女子") return false;
+    if(state.swimmerSex === "male" && swimmer.sex !== "男子") return false;
+    if(!swimmerAgeMatches(swimmer.ageGroup, state.swimmerAge)) return false;
+    if(query && !swimmerSearchIndex(swimmer).includes(query)) return false;
+    return true;
+  });
+}
+
+function renderSwimmers(){
+  renderSwimmerFilters();
+  const list = filterSwimmers();
+  document.getElementById("swimmerStatus").innerHTML = `該当 <strong>${list.length}</strong>人 / 全体 <strong>${DATA.summary.swimmerCount}</strong>人`;
+  const root = document.getElementById("swimmerList");
+  if(!list.length){
+    root.innerHTML = `<div class="empty-view">一致する選手が見つかりませんでした。氏名、所属、ふりがなを変えてもう一度試してください。</div>`;
+    return;
+  }
+  root.innerHTML = list.map(swimmer => `
+    <details class="swimmer-card">
+      <summary class="swimmer-summary">
+        <div class="swimmer-name-row">
+          <div>
+            <div class="swimmer-name">${escapeHtml(swimmer.name)}</div>
+            ${swimmer.kana ? `<div class="name-kana">${escapeHtml(swimmer.kana)}</div>` : ""}
+            <div class="swimmer-team">${escapeHtml(swimmer.team)} / ${escapeHtml(swimmer.grade || swimmer.ageGroup)}</div>
+          </div>
+          <div class="badge badge-count">${escapeHtml(swimmer.resultCount)}件</div>
+        </div>
+        <div class="badges">
+          <span class="badge ${swimmer.sex === "女子" ? "badge-female" : "badge-male"}">${escapeHtml(swimmer.sex)}</span>
+          <span class="badge badge-age">${escapeHtml(swimmer.ageGroup)}</span>
+          <span class="badge badge-grade">${escapeHtml(swimmer.grade || "学年未記載")}</span>
+          ${swimmer.kana ? `<span class="badge badge-count">${escapeHtml(swimmer.kana)}</span>` : ""}
+        </div>
+      </summary>
+      <div class="swimmer-body">
+        <div class="event-detail-list">
+          ${swimmer.results.map(result => `
+            <div class="result-item">
+              <div class="result-head">
+                <div class="result-title">${escapeHtml(result.type === "relay" ? "リレー" : "個人")} / No.${escapeHtml(result.no)} ${escapeHtml(result.eventLabel)}</div>
+                <div class="result-time">${escapeHtml(result.time || result.status || "-")}</div>
+              </div>
+              <div class="result-meta">${escapeHtml(groupMetaHtml(result))}${result.split ? ` / 第一泳者 ${escapeHtml(result.split)}` : ""}</div>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    </details>
+  `).join("");
+}
+
+function filterEventCards(type){
+  const sexKey = type === "individual" ? state.individualSex : state.relaySex;
+  const ageKey = type === "individual" ? state.individualAge : state.relayAge;
+  const source = type === "individual" ? DATA.individualEventCards : DATA.relayEventCards;
+  return source.filter(event => {
+    if(sexKey === "female" && event.sex !== "女子") return false;
+    if(sexKey === "male" && event.sex !== "男子") return false;
+    if(!eventAgeMatches(event.ageClass, ageKey)) return false;
+    return true;
+  });
+}
+
+function groupEventCards(cards){
+  const grouped = [];
+  AGE_RENDER_ORDER.forEach(ageClass => {
+    const ageCards = cards.filter(card => card.ageClass === ageClass);
+    if(!ageCards.length) return;
+    const sexGroups = SEX_RENDER_ORDER.map(sex => ({
+      sex,
+      cards: ageCards.filter(card => card.sex === sex)
+    })).filter(group => group.cards.length);
+    grouped.push({ ageClass, sexGroups });
+  });
+  const leftovers = cards.filter(card => !AGE_RENDER_ORDER.includes(card.ageClass));
+  leftovers.forEach(card => {
+    grouped.push({
+      ageClass: card.ageClass,
+      sexGroups: [{ sex: card.sex, cards: [card] }]
+    });
+  });
+  return grouped;
+}
+
+function ensureSelectedEvent(type, cards){
+  const key = type === "individual" ? "individualEventNo" : "relayEventNo";
+  if(!cards.length){
+    state[key] = null;
+    return null;
+  }
+  const exists = cards.some(card => card.no === state[key]);
+  if(!exists) state[key] = cards[0].no;
+  return state[key];
+}
+
+function renderEventFilters(type){
+  const sexRoot = type === "individual" ? "individualSexChips" : "relaySexChips";
+  const ageRoot = type === "individual" ? "individualAgeChips" : "relayAgeChips";
+  const sexValue = type === "individual" ? state.individualSex : state.relaySex;
+  const ageValue = type === "individual" ? state.individualAge : state.relayAge;
+  document.getElementById(sexRoot).innerHTML = chipMarkup([
+    { value: "all", label: "全体" },
+    { value: "female", label: "女子", className: "female" },
+    { value: "male", label: "男子", className: "male" }
+  ], sexValue, sexRoot);
+  document.getElementById(ageRoot).innerHTML = chipMarkup(EVENT_AGE_OPTIONS.map(value => ({
+    value,
+    label: AGE_LABELS[value]
+  })), ageValue, ageRoot);
+}
+
+function focusEventDetail(type){
+  const detailId = type === "individual" ? "individualEventDetail" : "relayEventDetail";
+  const detail = document.getElementById(detailId);
+  if(!detail) return;
+  detail.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function focusEventSelector(type){
+  const selectorId = type === "individual" ? "individualEventSelector" : "relayEventSelector";
+  const selector = document.getElementById(selectorId);
+  if(!selector) return;
+  selector.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function parseRaceTime(value){
+  const text = String(value || "").trim();
+  if(!text) return Number.POSITIVE_INFINITY;
+  if(text.includes(":")){
+    const [minutes, seconds] = text.split(":");
+    return Number(minutes) * 60 + Number(seconds);
+  }
+  return Number(text);
+}
+
+function isOfficialStatusRow(row){
+  return Boolean(row.status) || Boolean(row.mark && /失格|棄権/.test(row.mark));
+}
+
+function buildDivisionRankGroups(event){
+  if(event.type !== "individual") return [];
+  const targets = ageTargets(event.ageClass);
+
+  return targets.map(ageClass => {
+    const rows = event.rows.filter(row => row.ageGroup === ageClass);
+    const valid = rows.filter(row => row.time && !row.status).sort((a, b) => parseRaceTime(a.time) - parseRaceTime(b.time));
+    const invalid = rows.filter(row => row.status || !row.time);
+    const ranked = valid.map((row, index) => ({ ...row, divisionRank: index + 1 }));
+    const rest = invalid.map(row => ({ ...row, divisionRank: null }));
+    return {
+      ageClass,
+      rows: [...ranked, ...rest]
+    };
+  }).filter(group => group.rows.length);
+}
+
+function buildRelayRankGroup(event){
+  if(event.type !== "relay") return null;
+  const valid = event.rows.filter(row => row.time && !row.status).sort((a, b) => parseRaceTime(a.time) - parseRaceTime(b.time));
+  const invalid = event.rows.filter(row => row.status || !row.time);
+  return {
+    ageClass: event.ageClass,
+    rows: [
+      ...valid.map((row, index) => ({ ...row, divisionRank: index + 1 })),
+      ...invalid.map(row => ({ ...row, divisionRank: null }))
+    ]
+  };
+}
+
+function divisionRankRowHtml(row, sex){
+  const swimmerMeta = getSwimmerMeta(row.name, row.team, sex);
+  return `
+    <div class="division-rank-row">
+      <div class="division-place">
+        <div class="division-place-label">順位</div>
+        <div class="division-place-value">${escapeHtml(row.divisionRank ? `${row.divisionRank}` : "-")}</div>
+      </div>
+      <div>
+        <div class="row-name">${escapeHtml(row.name)}</div>
+        ${swimmerMeta && swimmerMeta.kana ? `<div class="name-kana">${escapeHtml(swimmerMeta.kana)}</div>` : ""}
+        <div class="division-rank-meta">${escapeHtml(`${row.team} / ${row.grade}`)}</div>
+      </div>
+      <div class="row-right">
+        <div class="row-rank">${escapeHtml(row.status ? row.status : (row.divisionRank ? `${row.divisionRank}位` : "-"))}</div>
+        <div class="row-time">${escapeHtml(row.time || "-")}</div>
+        ${row.mark ? `<div class="row-status">${escapeHtml(row.mark)}</div>` : ""}
+      </div>
+    </div>`;
+}
+
+function divisionRankSectionHtml(event){
+  const groups = event.type === "individual"
+    ? buildDivisionRankGroups(event)
+    : [buildRelayRankGroup(event)].filter(Boolean);
+  if(!groups.length) return "";
+  return `
+    <div class="division-rank-wrap">
+      ${groups.map(group => `
+        <div class="division-rank-card">
+          <div class="division-rank-title">${escapeHtml(group.ageClass)} の通し順位</div>
+          <div class="division-rank-sub">同じ区分の全員を、記録順で並べています。棄権・失格は順位外で末尾に残します。</div>
+          <div class="division-rank-list">
+            ${group.rows.map(row => divisionRankRowHtml(row, event.sex)).join("")}
+          </div>
+        </div>
+      `).join("")}
+    </div>`;
+}
+
+function renderEventPanel(type){
+  renderEventFilters(type);
+  const cards = filterEventCards(type);
+  const selectorId = type === "individual" ? "individualEventSelector" : "relayEventSelector";
+  const statusId = type === "individual" ? "individualStatus" : "relayStatus";
+  const detailId = type === "individual" ? "individualEventDetail" : "relayEventDetail";
+  const selectedNo = ensureSelectedEvent(type, cards);
+  document.getElementById(statusId).innerHTML = cards.length
+    ? `該当 <strong>${cards.length}</strong>種目 / 表示中 No.<strong>${selectedNo}</strong>`
+    : `該当 <strong>0</strong>種目`;
+  if(!cards.length){
+    document.getElementById(selectorId).innerHTML = "";
+    document.getElementById(detailId).innerHTML = `<div class="empty-view">条件に合う種目がありません。</div>`;
+    return;
+  }
+  const groupedCards = groupEventCards(cards);
+  document.getElementById(selectorId).innerHTML = groupedCards.map(group => `
+    <div class="event-group">
+      <div class="event-group-title">${escapeHtml(group.ageClass)}</div>
+      <div class="event-group-sub">この区分で出場している種目だけをまとめています。</div>
+      ${group.sexGroups.map(sexGroup => `
+        <div class="event-subgroup">
+          <div class="event-subgroup-label">${escapeHtml(sexGroup.sex)}</div>
+          <div class="event-subgroup-list">
+            ${sexGroup.cards.map(card => `
+              <button class="event-button${card.no === selectedNo ? " active" : ""}" data-type="${type}" data-no="${escapeHtml(card.no)}">
+                <div class="event-no">No.${escapeHtml(card.no)} / ${escapeHtml(card.sex)} / ${escapeHtml(card.ageClass)}</div>
+                <div class="event-name">${escapeHtml(card.eventLabel)}</div>
+                <div class="event-sub">${escapeHtml(card.entryCount)}件${card.divisionNote ? ` / ${escapeHtml(card.divisionNote)}` : ""}</div>
+              </button>
+            `).join("")}
+          </div>
+        </div>
+      `).join("")}
+    </div>
+  `).join("");
+  const event = DATA.events.find(item => item.no === selectedNo);
+  document.getElementById(detailId).innerHTML = `
+    <div class="card section-card">
+      <div class="kicker">${type === "individual" ? "INDIVIDUAL" : "RELAY"} RESULT</div>
+      <div class="lead-title">No.${escapeHtml(event.no)} ${escapeHtml(event.sex)} ${escapeHtml(event.eventLabel)}</div>
+      <div class="lead-text">${escapeHtml(event.ageClass)} / ${escapeHtml(event.rows.length)}件 ${event.divisionNote ? ` / ${escapeHtml(event.divisionNote)}` : ""}</div>
+      <div class="jump-row">
+        <button class="jump-button" data-jump="${type}">この区分の種目一覧へ戻る</button>
+      </div>
+      <div class="pdf-note">区分の通し順位だけを表示します。</div>
+    </div>
+    ${divisionRankSectionHtml(event)}`;
+}
+
+function renderRecords(){
+  document.getElementById("recordSexChips").innerHTML = chipMarkup([
+    { value: "all", label: "全体" },
+    { value: "female", label: "女子", className: "female" },
+    { value: "male", label: "男子", className: "male" }
+  ], state.recordSex, "recordSex");
+  document.getElementById("recordTypeChips").innerHTML = chipMarkup([
+    { value: "all", label: "全部", className: "record" },
+    { value: "individual", label: "個人", className: "record" },
+    { value: "relay", label: "リレー", className: "record" }
+  ], state.recordType, "recordType");
+
+  const visible = DATA.records.filter(record => {
+    if(state.recordSex === "female" && record.sex !== "女子") return false;
+    if(state.recordSex === "male" && record.sex !== "男子") return false;
+    if(state.recordType !== "all" && record.eventType !== state.recordType) return false;
+    return true;
+  });
+
+  const femaleCount = visible.filter(record => record.sex === "女子").length;
+  const maleCount = visible.filter(record => record.sex === "男子").length;
+  document.getElementById("recordStatus").innerHTML = `表示中 <strong>${visible.length}</strong>件 / 女子 <strong>${femaleCount}</strong>件 / 男子 <strong>${maleCount}</strong>件`;
+  document.getElementById("recordList").innerHTML = visible.map(record => `
+    <div class="record-card">
+      <div class="record-head">
+        <div>
+          <div class="record-title">No.${escapeHtml(record.no)} ${escapeHtml(record.sex)} ${escapeHtml(record.eventLabel)}</div>
+          <div class="record-sub">${escapeHtml(record.name)} / ${escapeHtml(record.team)}</div>
+        </div>
+        <div class="record-time">${escapeHtml(record.time)}</div>
+      </div>
+      <div class="mini-tags">
+        <span class="mini-tag ${record.sex === "女子" ? "female-mark" : "male-mark"}">${escapeHtml(record.sex)}</span>
+        <span class="mini-tag division-mark">${escapeHtml(record.division)}</span>
+        <span class="mini-tag record-mark">${escapeHtml(record.mark)}</span>
+      </div>
+      <div class="record-sub">
+        ${record.eventType === "relay"
+          ? `第一泳者 ${escapeHtml(record.split || "-")} / 総合記録 ${escapeHtml(record.time)}`
+          : `所属 ${escapeHtml(record.team)} / 学年 ${escapeHtml(record.grade)} / 記録 ${escapeHtml(record.time)}`}
+      </div>
+    </div>
+  `).join("");
+}
+
+function renderAll(){
+  if(!DATA){
+    document.body.innerHTML = '<div class="panel active"><div class="empty-view">結果データの読み込みに失敗しました。</div></div>';
+    return;
+  }
+  setTabs();
+  renderHeroStats();
+  renderSwimmers();
+  renderEventPanel("individual");
+  renderEventPanel("relay");
+  renderRecords();
+}
+
+document.querySelectorAll(".tab").forEach(button => {
+  button.addEventListener("click", () => {
+    const clickedTab = Number(button.dataset.tab);
+    if(state.tab === clickedTab){
+      if(clickedTab === 2) {
+        focusEventSelector("individual");
+        return;
+      }
+      if(clickedTab === 3) {
+        focusEventSelector("relay");
+        return;
+      }
+    }
+    state.tab = clickedTab;
+    setTabs();
+  });
+});
+
+document.getElementById("swimmerSearch").addEventListener("input", event => {
+  state.swimmerQuery = event.target.value;
+  renderSwimmers();
+});
+
+document.getElementById("swimmerSearchLinks").addEventListener("click", event => {
+  const button = event.target.closest(".search-link");
+  if(!button) return;
+  const input = document.getElementById("swimmerSearch");
+  input.value = button.dataset.query;
+  state.swimmerQuery = button.dataset.query;
+  renderSwimmers();
+});
+
+attachChipHandlers("swimmerSexChips", value => {
+  state.swimmerSex = value;
+  renderSwimmers();
+});
+attachChipHandlers("swimmerAgeChips", value => {
+  state.swimmerAge = value;
+  renderSwimmers();
+});
+attachChipHandlers("individualSexChips", value => {
+  state.individualSex = value;
+  renderEventPanel("individual");
+});
+attachChipHandlers("individualAgeChips", value => {
+  state.individualAge = value;
+  renderEventPanel("individual");
+});
+attachChipHandlers("relaySexChips", value => {
+  state.relaySex = value;
+  renderEventPanel("relay");
+});
+attachChipHandlers("relayAgeChips", value => {
+  state.relayAge = value;
+  renderEventPanel("relay");
+});
+attachChipHandlers("recordSexChips", value => {
+  state.recordSex = value;
+  renderRecords();
+});
+attachChipHandlers("recordTypeChips", value => {
+  state.recordType = value;
+  renderRecords();
+});
+
+document.getElementById("individualEventSelector").addEventListener("click", event => {
+  const button = event.target.closest(".event-button");
+  if(!button) return;
+  state.individualEventNo = Number(button.dataset.no);
+  renderEventPanel("individual");
+  focusEventDetail("individual");
+});
+
+document.getElementById("relayEventSelector").addEventListener("click", event => {
+  const button = event.target.closest(".event-button");
+  if(!button) return;
+  state.relayEventNo = Number(button.dataset.no);
+  renderEventPanel("relay");
+  focusEventDetail("relay");
+});
+
+document.getElementById("individualEventDetail").addEventListener("click", event => {
+  const button = event.target.closest(".jump-button");
+  if(!button) return;
+  focusEventSelector("individual");
+});
+
+document.getElementById("relayEventDetail").addEventListener("click", event => {
+  const button = event.target.closest(".jump-button");
+  if(!button) return;
+  focusEventSelector("relay");
+});
+
+renderAll();
+</script>
+</body>
+</html>
